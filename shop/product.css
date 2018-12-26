@@ -55,7 +55,8 @@ p {
     height: 500px;
     margin: 6px;
     padding-left: 50px;
-    background-color: #fff
+    background-color: #fff;
+    opacity:0.9;
 }
 
 
