@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <style>
@@ -117,3 +118,124 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type=password], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input[type=button] {
+        width: 100%;
+        background-color:cornflowerblue;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    input[type=button]:hover {
+        background-color:cornflowerblue;
+    }
+    
+    form {
+        border-radius: 5px;
+        /* background-color:#f2f2f2; */
+        padding: 20px;
+    }
+</style>
+
+<head>
+    <title>布織布</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
+        crossorigin="anonymous">
+</head>
+
+<script>
+    function login(account, password) {
+        var a = account;
+        var p = password;
+        if (a == "testBuy" && p == "testBuy") {
+            window.alert(account+" , 登入成功");
+        }
+        else if (a == "testSell" && p == "testSell") {
+            window.alert(account+" , 登入成功");
+        }
+        else {
+            window.alert("登入失敗 請重新登入");
+        }
+        window.location.href="login.html";
+    }
+</script>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="user.png" alt="logo" style="width:30px;">
+        </a>
+        <a class="navbar-brand" href="#">布織布</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">首頁<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">商品</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">購物車</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">登入</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <form action="/action_page.php" method="POST">
+            <label for="account">帳號</label>
+            <input type="text" id="account" name="account" placeholder="Your account..." required="required">
+            <label for="password">密碼</label>
+            <input type="password" id="password" name="password" placeholder="Your password..." required="required">
+            <input type="button" value="登入" onclick="login(account.value,password.value)">
+        </form>
+    </div>
+    <!-- Welcome
+    <?php echo $_POST["account"]; ?><br>
+    Your email address is:
+    <?php echo $_POST["password"]; ?> -->
+</body>
+
+</html>
+>>>>>>> 97203cda6120992c93877c6b9332f7541cd85ab1
