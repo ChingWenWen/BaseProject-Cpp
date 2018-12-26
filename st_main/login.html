@@ -83,14 +83,17 @@
         var p = password;
         if (a == "testBuy" && p == "testBuy") {
             window.alert(account + " , 登入成功");
+            window.location.href = "test.html";
         }
         else if (a == "testSell" && p == "testSell") {
             window.alert(account + " , 登入成功");
+            window.location.href = "test.html";
         }
         else {
             window.alert("登入失敗 請重新登入");
+            window.location.href = "login.html";
         }
-        window.location.href = "login.html";
+        
     }
 </script>
 
