@@ -1,0 +1,101 @@
+.col-lg-12{
+    position: relative;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.bordered{
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 15px;
+}
+.chatbox{
+    background-color: white;
+    padding: 50px;
+    margin: 20px auto;
+    opacity: .9;
+}
+.chatlogs{
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    height: 450px;
+    background: #fbfbfb;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.chatlogs::-webkit-scrollbar{
+    width: 10px;
+}
+.chatlogs::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1)
+}
+.chat{
+    display: flex;
+    flex-flow: row rap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-family: "Microsoft JhengHei";
+}
+.chat .user-photo{
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chat .user-photo img{
+    width: 100%;
+}
+.chat .chat-message{
+    width: 95%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+.sell .chat-message{
+    background: #1ddced;
+}
+.buy .chat-message{
+    background: #1adda4;
+    order: -1;
+}
+.chat-form{
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    font-family: "Microsoft JhengHei";
+}
+.chat-form textarea{
+    background: #fbfbfb;
+    width: 90%;
+    height: 50px;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    resize: none;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+}
+.chat-form textarea:focus{
+    background: #fff;
+}
+.chat-form textarea::-webkit-scrollbar{
+    width: 10px;
+}
+.chat-form textarea::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1)
+}
+.chat-form button{
+    background: #dddddd;
+    padding: 5px 15px;
+    font-size: 20px;
+    color: #424242;
+    border: none;
+    margin: 0 10px;
+    border-radius: 3px;
+    vertical-align: middle;
+}

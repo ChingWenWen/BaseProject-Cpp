@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../st_main/main.css">
+    <link rel="stylesheet" type="text/css" href="./pm.css">
 </head>
 
-<body>
+<body background="bg.jpg">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <img src="user.png" alt="logo" style="width:30px;">
@@ -42,21 +44,32 @@
             </ul>
         </div>
     </nav>
-    <div  class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <span style="font-family:Microsoft JhengHei;font-size:40px;font-weight:bold;">與 aaa 的私訊</span>
+                <img src="./sell.jpg" style="border-radius: 50%; width: 70px; height: 70px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="bordered" style="font-family:Microsoft JhengHei;font-size: 35px;font-weight:bold;vertical-align:middle;">Seller</span>
             </div>
 
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-
+        <div class="container">
+            <div class="chatbox col-lg-12" style="padding: 50px">
+                <div class="chatlogs">
+                    <div class="chat buy">
+                        <div class="user-photo"><img src="./self.jpg"></div>
+                        <p class="chat-message">請問此商品還有沒有存貨？</p>
+                    </div>
+                    <div class="chat sell">
+                        <div class="user-photo"><img src="./sell.jpg"></div>
+                        <p class="chat-message">有的！請直接下單。</p>
+                    </div>
+                    
+                </div>
+                <div class="chat-form">
+                    <textarea></textarea>
+                    <button>傳送</button>
+                </div>
             </div>
-            <div class="col-lg-8">
-
-            </div>
-
         </div>
     </div>
 </body>
