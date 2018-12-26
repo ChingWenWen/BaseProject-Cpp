@@ -20,37 +20,40 @@
             var getNameval = document.getElementById("productName").textContent;
             turngetval=escape(getval);
             turngetNameval=escape(getNameval);
-            window.location.href = "text.html?value=" + turngetval+"&productName="+turngetNameval+"&Cost="+cost;
+            window.location.href = "../trolley/1stStep.html?value=" + turngetval+"&productName="+turngetNameval+"&Cost="+cost;
         } 
     </script>
 
 </head>
 
 <body style="background-image:url(fog-foggy-forest-4827.jpg);background-size: cover;">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Brand/logo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <img src="user.png" alt="logo" style="width:30px;">
         </a>
+        <a class="navbar-brand" href="../st_main/test.html">布織布</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">布織布</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">族群介紹</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="productPage.html">商品</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">購物車</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">登入</a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="test.html">首頁<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../shop/productPage.html">商品</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../trolley/1stStep.html">購物車</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../st_main/login.html">登入</a>
+                </li>
+            </ul>
+
+        </div>
     </nav>
     <!--分類-->
     <div class="sidebar">
@@ -78,9 +81,9 @@
                             <button onclick="add()" id="buttonType"> ＋ </button><br><br>
                         </h6>
                     </div><br><br>
-                    <button type="button" onclick="toBuy()" id="buttonType">加入購物車</button>
+                    <button class="btn btn-success" type="button" onclick="toBuy()" >加入購物車</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button type="button" id="buttonType">私訊賣家</button>
+                    <button class="btn btn-info" type="button" onclick="location.href = '#'">私訊賣家</button>
                 </div>
 
             </div>
