@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <style>
+        .shopping_step {
+            width: 100%;
+        }
+
+        .progressbar {
+            counter-reset: step;
+        }
+
+        .progressbar li {
+            list-style-type: none;
+            float: left;
+            width: 25%;
+            position: relative;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .progressbar li::before {
+            content: counter(step);
+            counter-increment: step;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ddd;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .progressbar li::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            top: 15px;
+            left: -50%;
+            z-index: -1;
+        }
+
+        .progressbar li:first-child::after {
+            content: none;
+        }
+
+        .progressbar li.active {
+            color: black;
+        }
+
+        .progressbar li.active::before {
+            border-color: black;
+        }
+
+        .progressbar li.active::after {
+            background-color: black;
+        }
+
+
+        .shoppingBox {
+            width: 750px;
+            height: 423px;
+            margin: 80px auto;
+            margin-bottom: 0px;
+            background: #FFFFFF;
+            box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
+            border-radius: 6px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            height: 60px;
+            border-bottom: 1px solid #E1E8EE;
+            padding: 20px 30px;
+            color: #5E6977;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .item {
+            padding: 20px 30px;
+            height: 120px;
+            display: flex;
+        }
+
+        .item:nth-child(n) {
+            border-bottom: 1px solid #E1E8EE;
+        }
+
+        .item:last-child {
+            border-bottom: 0px;
+        }
+
+        .shoppingBox {
+            width: 750px;
+            height: 423px;
+            margin: 80px auto;
+            background: #FFFFFF;
+            box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
+            border-radius: 6px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            height: 60px;
+            border-bottom: 1px solid #E1E8EE;
+            padding: 20px 30px;
+            color: #5E6977;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .item {
+            padding: 40px;
+            height: 30px;
+            display: flex;
+            text-align: top;
+        }
+
+        .item:nth-child(n) {
+            border-bottom: 1px solid #E1E8EE;
+        }
+
+        .item:last-child {
+            border-bottom: 0px;
+        }
+
+        .item {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default radio button */
+
+        .item input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom radio button */
+
+        .checkmark {
+            position: absolute;
+            top: 49px;
+            left: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: #f0ecea;
+            border-color: black;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+
+        .item:hover input~.checkmark {
+            background-color: #ddd;
+        }
+
+        /* When the radio button is checked, add a blue background */
+
+        .item input:checked~.checkmark {
+            background-color: #ddd;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+
+        .item input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+
+        .item .checkmark:after {
+            top: 5.3px;
+            left: 5.3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #a48074;
+        }
+
+        .step {
+            margin-left: 0%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../st_main/abt_image/user.png" alt="logo" style="width:30px;">
+        </a>
+        <a class="navbar-brand" href="../st_main/test.html">布織布</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../st_main/test.html">首頁
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../shop/productPage.html">商品</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="1stStep.html">購物車</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../st_main/login.html">登入</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="shopping_step">
+        <ul class="progressbar">
+            <li class="active">確認購物車</li>
+            <li class="active">付款及運送方式</li>
+            <li>填寫資料</li>
+            <li>訂購完成</li>
+        </ul>
+    </div>
+    <form>
+        <div class="shoppingBox">
+
+            <div class="title">選擇運送方式</div>
+            <label class="item">7-11 取貨付款
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="item">全家、OK、萊爾富 取貨付款
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="item">信用卡付款
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+            <label class="item">ATM虛擬帳號
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
+
+            <div class="step">
+                <a href="1stStep.html" class="btn btn-info" role="button">返回購物車</a>
+                <a href="3thStep.html" class="btn btn-info" role="button">下一步</a>
+            </div>
+
+        </div>
+
+
+    </form>
+
+
+</body>
