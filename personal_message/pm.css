@@ -13,6 +13,7 @@
     padding: 50px;
     margin: 20px auto;
     opacity: .9;
+    border-radius: 5px;
 }
 .chatlogs{
     position: relative;
