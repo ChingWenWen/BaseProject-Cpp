@@ -110,6 +110,21 @@
         }
     </style>
 
+    <script>
+        function information() {
+            var getName = document.getElementById("name").value;
+            var getNumber = document.getElementById("PhoneNumber").value;
+            var getMail = document.getElementById("email").value;
+            var getAddress = document.getElementById("address").value;
+
+            turnGetName = escape(getName);
+            turnGetNumber = escape(getNumber);
+            turnGetMail = escape(getMail);
+            turnGetAddress = escape(getAddress);
+            window.location.href = "4thStep.html?naem=" + turnGetName + "&phoneNumber=" + turnGetNumber + "&email=" + turnGetMail + "&address=" + turnGetAddress;
+        }
+    </script>
+
 </head>
 
 <body>
@@ -153,7 +168,7 @@
         </ul>
     </div>
 
-    <form class="form-horizontal form" action="4thStep.html">
+    <form class="form-horizontal form">
         <div class="shoppingBox">
             <div class="title">填寫資料</div>
 
@@ -184,7 +199,7 @@
 
             <div class="step">
                 <a href="2ndStep.html" class="btn btn-info" role="button">重選付款方式</a>
-                <button type="submit" class="btn btn-info" href="4thStep.html">確認送出 </button>
+                <a class="btn btn-info" onclick="information()">確認送出 </a>
             </div>
         </div>
     </form>
