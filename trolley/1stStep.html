@@ -13,6 +13,7 @@
         body {
             background-image: url("blur-close-up-conifers-246538.jpg");
             background-size: cover;
+
         }
 
         .shopping_step {
@@ -26,7 +27,7 @@
         .progressbar li {
             list-style-type: none;
             float: left;
-            width: 25%;
+            width: 24%;
             position: relative;
             text-align: center;
             color: #ddd;
@@ -74,55 +75,37 @@
         }
 
         .shoppingBox {
-            width: 750px;
-            height: 200px;
-            margin: 80px auto;
+            width: 75%;
+            height: 20%;
+            margin: 10% auto;
             margin-bottom: 0px;
-            background: #FFFFFF;
+            background: rgb(255, 255, 255);
             box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
             border-radius: 6px;
-
+            opacity: 0.8;
             display: flex;
             flex-direction: column;
         }
 
         .title {
-            height: 60px;
+            height: auto;
             border-bottom: 1px solid #E1E8EE;
             padding: 20px 30px;
             color: #5E6977;
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: center;
         }
 
         .product {
-            height: 120px;
+            height: 10%;
             display: flex;
-            margin-top: 10%;
             align-items: center;
-        }
-
-        .image {
-            margin-right: 50px;
-        }
-
-        .description {
-            padding-top: 10px;
-            margin-right: 60px;
-            width: 115px;
-        }
-
-        .description span {
-            display: block;
-            font-size: 14px;
-            color: #43484D;
-            font-weight: 400;
-            align-items: center;
+            margin: 2%;
         }
 
         .quantity {
-            padding-top: 20px;
-            margin-right: 60px;
+            margin-right: 3%;
         }
 
         .quantity input {
@@ -135,12 +118,11 @@
             font-weight: 300;
         }
 
-        .description input {
+        .description span {
             -webkit-appearance: none;
             border: none;
             text-align: center;
-            width: auto;
-            font-size: 16px;
+            font-size: 0.8rem;
             color: #43484D;
             font-weight: 300;
         }
@@ -156,21 +138,16 @@
             cursor: pointer;
         }
 
-        .total-price input {
+        .total-price span {
             -webkit-appearance: none;
             border: none;
             text-align: left;
-            width: auto;
-            font-size: 16px;
+            font-size: 0.8rem;
             color: #43484D;
-            font-weight: 300;
-            padding-top: 15px;
         }
 
-
-        .step {
-            margin-top: 10%;
-            margin-left: 0.8%;
+        .step{
+            padding:1% 13%;
         }
     </style>
 
@@ -226,19 +203,16 @@
 
             <!-- Product #1 -->
             <div class="product">
-                <div class="image">
-                    <img src="" alt="" />
-                </div>
 
                 <div class="description">
-                    <input id="name" value="">
+                    <span class="form-control" id="name" value=""></span>
                 </div>
 
                 <div class="quantity">
                     <button class="minus-btn" type="button" name="button" onclick="reduce(); totalprice();">
                         <img src="minus-sign.png" alt="" />
                     </button>
-                    <input type="text" name="name" id="quantity" value="0">
+                    <input type="text" name="name" id="quantity" value="0" class="nameValue">
                     <button class="plus-btn" type="button" name="button" onclick="add(); totalprice();">
                         <img src="add.png" alt="" />
                     </button>
@@ -246,16 +220,16 @@
 
                 </div>
                 <div class="total-price">
-                    <input type="text" id="price" value="$0">
+                    <span class="form-control" type="text" id="price" value="$0"></span>
                 </div>
 
             </div>
-            <div class="step">
-                <a class="btn btn-info" href="productPage.html">繼續購物</a>
-                <a href="2ndStep.html" class="btn btn-info" role="button">下一步</a>
-            </div>
-        </div>
 
+        </div>
+        <div class="step">
+            <a class="btn btn-info" href="productPage.html">繼續購物</a>
+            <a href="2ndStep.html" class="btn btn-info" role="button">下一步</a>
+        </div>
 
     </form>
 
@@ -278,8 +252,8 @@
 
         function totalprice() {
             var quantity = document.getElementById("quantity").value;
-            var total = parseInt(quantity) * price;
-            document.getElementById("price").value = "$" + total;
+            var total = parseInt(quantity) * parseInt(price);
+            $("#price").text("$" + total);
         }
 
         function manyValues() {
@@ -295,11 +269,11 @@
                 }
             }
             document.getElementById("quantity").value = value[0];
-            document.getElementById("name").value = value[1];
-            document.getElementById("price").value = value[2];
+            $("#name").text(value[1]);
+            $("#price").text(value[2]);
         }
         manyValues();
-        var price = document.getElementById("price").value;
+        var price = $("#price").text();
         totalprice();
     </script>
 

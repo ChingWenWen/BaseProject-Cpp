@@ -75,25 +75,26 @@
         }
 
         .shoppingBox {
-            width: 750px;
-            height: 350px;
-            margin: 80px auto;
+            width: 75%;
+            height: 20%;
+            margin: 10% auto;
             margin-bottom: 0px;
-            background: #FFFFFF;
+            background: rgb(255, 255, 255);
             box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
             border-radius: 6px;
-
+            opacity: 0.8;
             display: flex;
             flex-direction: column;
         }
 
         .title {
-            height: 60px;
+            height: auto;
             border-bottom: 1px solid #E1E8EE;
             padding: 20px 30px;
             color: #5E6977;
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: center;
         }
 
 
@@ -105,9 +106,9 @@
             padding-left: 14%;
         }
 
-        .step {
-            margin-top: 5%;
-            margin-left: 0;
+        
+        .step{
+            padding:1% 13%;
         }
     </style>
 
@@ -175,10 +176,11 @@
                 <div class="input col-sm-4" id="address"></div>
             </div>
 
-            <div class="step">
-                <a href="3thStep.html" class="btn btn-info" role="button">返回填寫資料</a>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">確認送出 </button>
-            </div>
+
+        </div>
+        <div class="step">
+            <a href="3thStep.html" class="btn btn-info" role="button">返回填寫資料</a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">確認送出 </button>
         </div>
     </form>
 

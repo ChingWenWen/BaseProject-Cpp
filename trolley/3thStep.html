@@ -74,39 +74,37 @@
         }
 
         .shoppingBox {
-            width: 750px;
-            height: 423px;
-            margin: 80px auto;
+            width: 75%;
+            height: 20%;
+            margin: 10% auto;
             margin-bottom: 0px;
-            background: #FFFFFF;
+            background: rgb(255, 255, 255);
             box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
             border-radius: 6px;
-
+            opacity: 0.8;
             display: flex;
             flex-direction: column;
         }
 
         .title {
-            height: 60px;
+            height: auto;
             border-bottom: 1px solid #E1E8EE;
             padding: 20px 30px;
             color: #5E6977;
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: center;
         }
 
 
         .item {
-            padding: 20px;
+            padding: 4%;
             height: 20px;
             display: flex;
-            padding-top: 40px;
-            padding-left: 14%;
         }
 
-        .step {
-            margin-top: 9.1%;
-            margin-left: 0%;
+        .step{
+            padding:1% 13%;
         }
     </style>
 
@@ -197,11 +195,14 @@
                 </div>
             </div>
 
-            <div class="step">
-                <a href="2ndStep.html" class="btn btn-info" role="button">重選付款方式</a>
-                <a class="btn btn-info" onclick="information()">確認送出 </a>
-            </div>
+
         </div>
+
+        <div class="step">
+            <a href="2ndStep.html" class="btn btn-info" role="button">重選付款方式</a>
+            <a class="btn btn-info" onclick="information()">確認送出 </a>
+        </div>
+
     </form>
 
 
